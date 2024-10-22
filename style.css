@@ -1,0 +1,298 @@
+/* Reseteo básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total del elemento */
+}
+
+/* Estilos generales para el body */
+body {
+    
+    text-align: center;
+    font-family: sans-serif;
+}
+
+/* Estilos para el contenedor del encabezado */
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: #171717;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 20px; /* Añade padding para espacio interno */
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    display: flex;
+    margin-right: 30px;
+}
+
+/* Estilos para el logo */
+.logo {
+    margin-left: 30px;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Estilos para los enlaces de navegación */
+.navbar a {
+    display: block;
+    padding: 23px 20px; 
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px; 
+}
+
+/* Estilo al pasar el ratón sobre los enlaces de navegación */
+.navbar a:hover {
+    background: #3f3f3f;
+}
+
+/* Estilos para el header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Ajusta el tamaño de la altura del header */
+    background: url('img/header.jpg') no-repeat center;
+    background-size: cover;    
+}
+
+/* Estilos para el título */
+.title {
+    margin-bottom: 40px;
+    font-size: 60px; /* Especifica la unidad px para el tamaño de fuente */
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* Estilos para los párrafos */
+p {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #fff;
+    padding: 0 100px;
+}
+
+/* Estilos para los botones */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 50px;
+    border: 2px solid #9c27b0;
+    color: #fff;
+    text-decoration: none;
+    background: #9c27b0;
+}
+
+/* Cambia el estilo de los botones al pasar el ratón */
+.btn:hover {
+    background: none;
+}
+
+/* Estilos para los contenedores de botones en el header */
+.btn-home {
+    display: flex;
+}
+
+.btn-home a {
+    margin: 0 10px;
+}
+
+/* Estilos generales para las secciones de contenido */
+.content {
+    height: 50vh; /* Ajusta la altura de las secciones */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos específicos para la sección sau */
+.sau {
+    padding: 30px;
+    background: #1f1d1d;
+}
+
+/* Estilos para el contenedor de cajas */
+.box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* Estilos para las cajas individuales */
+.box {
+    height: 11rem;
+    width: 17rem;
+    background: #101010;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem 5rem rgba(0, 0, 0, .5); /* Corrige el uso de rgba y remueve los espacios */
+    margin: 2rem;
+}
+.box-container .box i {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #9c27b0;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.box-container .box h3 {
+    font-size: 20px;
+    color: #9c27b0;
+}
+
+.box-container .box p {
+    padding: 0 15px;
+    font-size: 16px;
+}
+.about{
+    background: #1f1d1d;
+}
+
+.price{
+    background: url(img/costos.jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+.contact{
+    padding-top: 20px;
+    background: #171717;
+    padding-bottom: 0;
+    
+}
+
+    /* Estilos para el reproductor de radio */
+    .radio-player {
+        position: fixed; /* Mantiene el reproductor en una posición fija */
+        bottom: 800px; /* Ajusta la distancia desde la parte inferior de la ventana */
+        left: 50%; /* Centra el reproductor horizontalmente */
+        transform: translateX(-50%); /* Ajusta la posición horizontal para centrarlo */
+        z-index: 1000; /* Asegura que el reproductor esté por encima de otros elementos */
+        background: #000; /* Fondo negro para el reproductor */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 5px; /* Espacio interno */
+        visibility: visible; /* Muestra el reproductor */
+            
+    }
+
+    /* Opcional: Estilo para el reproductor cuando se pasa el ratón */
+    .radio-player:hover {
+        background: #333; /* Color de fondo más claro al pasar el ratón */
+    }
+
+  .modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija en la pantalla */
+    z-index: 1; /* Colocar el modal encima de todo el contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente negro */
+}
+
+.modal-content {
+    background-color: #444; /* Color de fondo del modal */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 5px;
+    text-align: center;
+    color: white; /* Color del texto */
+}  
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija en la pantalla */
+    z-index: 1; /* Colocar el modal encima de todo el contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente negro */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #444; /* Color de fondo del modal */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 5px;
+    text-align: center;
+    color: white; /* Color del texto */
+}
+
+/* Estilo del botón de cerrar */
+.close {
+    color: #aaa; /* Color del botón */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white; /* Cambia el color al pasar el ratón */
+    text-decoration: none;
+    cursor: pointer;
+}
+ /* Estilos del modal (cuadro sobrepuesto) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija en la pantalla */
+    z-index: 1; /* Colocar el modal encima de todo el contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: white;
+    margin: auto; /* Centrar el modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 5px;
+    max-height: 70%; /* Limitar la altura del modal */
+    overflow: hidden; /* Ocultar el contenido que excede el tamaño */
+    position: relative; /* Para permitir el desplazamiento */
+    cursor: move; /* Cambiar cursor al mover */
+}
+
+/* Contenedor del cuerpo del modal */
+.modal-body {
+    max-height: 300px; /* Altura máxima para permitir el desplazamiento */
+    overflow-y: auto; /* Habilitar desplazamiento vertical */
+    padding: 10px; /* Espaciado interno */
+}
+
