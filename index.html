@@ -10,6 +10,14 @@
     <title>Frecuencia ST</title>
     <style>
         /* Estilos básicos */
+        body {
+            background-color: #1f1d1d; /* Color de fondo de la página */
+            color: white; /* Color del texto */
+            font-family: Arial, sans-serif; /* Fuente general */
+            margin: 0; /* Eliminar márgenes */
+            padding-top: 60px; /* Espacio para la cabecera fija */
+        }
+
         .btn {
             background-color: #9c27b0; /* Color de los botones */
             color: white;
@@ -20,55 +28,56 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            margin: 5px; /* Espacio entre botones */
         }
 
-        /* Estilos del modal (cuadro sobrepuesto) */
-        .modal {
+        /* Pestañas en blanco */
+        .pestaña {
             display: none; /* Oculto por defecto */
-            position: fixed; /* Posición fija en la pantalla */
-            z-index: 1; /* Colocar el modal encima de todo el contenido */
-            left: 0;
+            height: auto; /* Ajustar la altura automáticamente */
+            background-color: #1f1d1d; /* Fondo de las pestañas */
+            color: black; /* Color del texto en las pestañas */
+            text-align: center;
+            padding: 20px; /* Añadir un poco de relleno */
+        }
+
+        /* Sección de inicio visible siempre */
+        #inicio {
+            display: block; /* Mostrar por defecto al cargar la página */
+        }
+
+        /* Mantener los botones centrados */
+        .btn-home {
+            display: flex;
+            justify-content: center; /* Centrar los botones */
+            margin-top: 20px; /* Espacio por encima de los botones */
+        }
+
+        /* Mantener los botones fijos en la parte superior */
+        .head {
+            position: fixed; /* Fijar en la parte superior */
             top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            left: 0;
+            right: 0;
+            background-color: #1f1d1d; /* Fondo de la cabecera */
+            padding: 10px 20px;
+            z-index: 1000; /* Asegura que esté en la parte superior */
         }
 
-        .modal-content {
-        background-color: #171717; /* Color del fondo del modal */
-        margin: 10% auto; /* Margen superior y centrado (sin margen inferior) */
-        padding: 20px; /* Espaciado interno */
-        border: 2px solid #888; /* Borde del modal */
-        width: 100%; /* Aumentar el ancho al 80% de la pantalla */
-        height: auto; /* Permitir que la altura sea automática según el contenido */
-        max-width: 1300px; /* Establecer un ancho máximo */
-        max-height: 1000px; /* Establecer una altura máxima */
-        border-radius: 20px; /* Bordes redondeados */
-        text-align: center; /* Centrar el texto */
-        color: white; /* Color del texto dentro del modal */
-        overflow-y: auto; /* Permitir desplazamiento vertical si es necesario */
-        cursor: default; /* Cambia el cursor a la flecha estándar */
-    }
-    
-
-        /* Botón para cerrar el modal */
-        .close {
-            color: #fff; /* Color del botón de cerrar */
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
+        /* Estilos del pie de página */
+        footer {
+            background-color: #1f1d1d; /* Fondo del pie de página */
+            color: white; /* Color del texto */
+            text-align: center; /* Centrar texto */
+            padding: 20px; /* Relleno */
+            position: relative; /* Posición relativa para evitar solapamientos */
+            bottom: 0; /* Fijar al fondo */
+            width: 100%; /* Ancho completo */
         }
 
-        .close:hover,
-        .close:focus {
-            color: #ccc; /* Color del botón de cerrar al pasar el ratón */
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Estilo para el body cuando el modal está abierto */
-        body.modal-open {
-            overflow: hidden; /* Evita el desplazamiento */
+        /* Margen superior para los títulos */
+        h2.title {
+            margin-top: 30px; /* Añadir margen superior a los títulos */
         }
     </style>
 </head>
@@ -79,58 +88,73 @@
 <!-- Header -->
 <div class="head">
     <div class="logo">
-        <a href="#">MENU</a>
+        <a href="#" id="logoBtn">
+            <img src="img/LOGO.jpg" style="height: 50px; width: auto;"> <!-- Cambia la ruta de la imagen según sea necesario -->
+        </a>
     </div>
     <nav class="navbar">
-        <a href="#inicio">inicio</a>
-        <a href="#nosotros">nosotros</a>
-        <a href="#contacto">contacto</a>
-        <a href="#productos">encuentranos</a>
-        <a href="#precio">proximo</a>
+        <a href="#" id="inicioBtn" class="nav-link" data-section="inicio">inicio</a>
+        <a href="#" class="nav-link" data-section="nosotros">nosotros</a>
+        <a href="#" class="nav-link" data-section="Encuesta">Votacion</a>
+        <a href="#" class="nav-link" data-section="productos">encuentranos</a>
+        <a href="#" class="nav-link" data-section="precio">Podcast</a>
     </nav>
 </div>
 
-<!-- Reproductor de radio Muses -->
-<div class="radio-player">
-    <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
-<script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
-<script type="text/javascript">
-MRP.insert({
-'url':'https://stream-154.zeno.fm/eyg5jukaroqtv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJleWc1anVrYXJvcXR2IiwiaG9zdCI6InN0cmVhbS0xNTQuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6Ild4Q3VMZldEUzhtcjFMSVZ2aFoyVnciLCJpYXQiOjE3Mjk1NjMxNzQsImV4cCI6MTcyOTU2MzIzNH0.jXm6sdWSSfH6mTNS65z1H6hEt-H8-XSEAmhCWOzzBUQ',
-'codec':'mp3',
-'volume':100,
-'autoplay':true,
-'jsevents':true,
-'buffering':0,
-'title':'FRECUENCIA SANTO TOMAS',
-'wmode':'transparent',
-'skin':'arvyskin',
-'width':560,
-'height':30
-});
-</script>
-<!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
-</div>
+<!-- Contenido original envuelto en un div -->
+<div id="contenidoOriginal">
+    <!-- Reproductor de radio Muses -->
+    <div class="radio-player">
+        <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+        <script type="text/javascript">
+            MRP.insert({
+                'url': 'https://stream-154.zeno.fm/eyg5jukaroqtv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJleWc1anVrYXJvcXR2IiwiaG9zdCI6InN0cmVhbS0xNTQuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6Ild4Q3VMZldEUzhtcjFMSVZ2aFoyVnciLCJpYXQiOjE3Mjk1NjMxNzQsImV4cCI6MTcyOTU2MzIzNH0.jXm6sdWSSfH6mTNS65z1H6hEt-H8-XSEAmhCWOzzBUQ',
+                'codec': 'mp3',
+                'volume': 100,
+                'autoplay': true,
+                'jsevents': true,
+                'buffering': 0,
+                'title': 'FRECUENCIA SANTO TOMAS',
+                'wmode': 'transparent',
+                'skin': 'arvyskin',
+                'width': 560,
+                'height': 30
+            });
+        </script>
+    </div>
 
-<!-- Sección de Inicio -->
+    <!-- Sección de Inicio -->
+     
 <header id="inicio" class="content header">
-    <h2 class="title">RADIO AUDIOCAST EN LA UNIDAD EDUCATIVA SANTO TOMAS</h2>
-    <p>
+    <h2 class="title" style="padding-top: 50px; color: white;">RADIO AUDIOCAST EN LA UNIDAD EDUCATIVA SANTO TOMAS</h2>
+    <p style="color: white; font-size: 20px;">
         FRECUENCIA, CONECTANDO VOCES Y RITMOS DE LA UNIDAD EDUCATIVA SANTO TOMAS
     </p>
-    <div class="btn-home">
-        <a href="#" class="btn">Saber más</a>
-        <a href="#" class="btn">lista</a>
-    </div>
+    <p style="color: #c531df; font-size: 26px; font-weight: bold; text-transform: uppercase; margin-top: 20px;">
+        ¡Descarga nuestras aplicaciones y lleva la radio a donde vayas!
+    </p>
+    <p style="color: #c531df; font-size: 30px; margin-top: 10px;">
+        Disponibles para iOS y Android.
+    </p>
+    <img src="img/colegio.jpeg" alt="Descripción de la imagen" style="display: block; margin: 200px auto 20px; max-width: 30%; height: auto;"> <!-- Aumentar el margen superior aquí -->
+    <!-- Descripción de la Radio Santo Tomás -->
+    <p style="color: white; font-size: 26px; margin-top: 20px; text-align: center;">
+        En el corazón del Colegio Santo Tomás Fe y Alegría, 
+        nuestra radio es un espacio vibrante donde las voces de estudiantes, 
+        maestros y la comunidad se unen para compartir información, música y momentos especiales.
+    </p>
+    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC;">© 2024 Creado por Gabriel Fernando Hidalgo Castro</p>
+    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC;">Ciudad de La Paz, Estado Plurinacional de Bolivia</p>
+    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC;">Radio.Frecuencia.Santo Tomas - @gmail.com - Cel. +591 77782216 (Whatsapp)</p>
 </header>
 
-<!-- Sección de Producto -->
-<section id="productos" class="content sau">
+
+<!-- Otras pestañas -->
+<!-- Pestaña de Producto -->
+<section id="productos" class="pestaña" style="background-color: #1f1d1d; background-image: url('img/fondo opaco.jpeg'); background-size: auto; background-position: center; background-repeat: repeat; padding: 40px 0;">
     <h2 class="title">NUESTRA RADIO</h2>
     <p>
-        Desarrollaremos una radio que ayude a varios usuarios a comunicarse entre todos y a dar información importante. 
-        Objetivo específico:
-        Expandiríamos esta radio mediante anuncios que ayuden a divulgar que mediante la radio habría más oportunidad de conectar nuestras ideas.
+        Nuestra radio se propone ser un espacio de comunicación inclusivo y accesible, donde los usuarios puedan conectarse entre sí y compartir información valiosa. A través de una variedad de programas y emisiones, buscaremos fomentar un ambiente en el que se aborden temas de interés general, promoviendo el diálogo y el intercambio de ideas 
     </p>
     <div class="box-container">
         <div class="box">
@@ -145,113 +169,235 @@ MRP.insert({
         </div>
         <div class="box">
             <i class="fab fa-android"></i>
-            <h3>Play Store</h3>
-            <p>FRECUENCIA ST</p>
+            <h3>APP iOS y Android </h3>
+            <p><a href="https://www.appcreator24.com/app3341072-6ha1y2" target="_blank" style="color: #ffffff; text-decoration: none;">FRECUENCIA ST</a></p>
         </div>
     </div>
+    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #ffffff;">© 2024 Creado por Gabriel Fernando Hidalgo Castro</p>
+    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #ffffff;">Ciudad de La Paz, Estado Plurinacional de Bolivia</p>
+    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #ffffff;">Radio.Frecuencia.Santo Tomas - @gmail.com - Cel. +591 77782216 (Whatsapp)</p>
 </section>
 
-<!-- Sección de Nosotros -->
-<section id="nosotros" class="content about">
-    <h2 class="title">Nosotros</h2>
-    <p>
-        Bienvenidos a Frecuencia ST, la radio oficial del Colegio Santo Tomás. Somos un equipo de estudiantes apasionados por la comunicación y la música, comprometidos con ofrecer una programación variada y de calidad para nuestra comunidad escolar.
+
+
+
+    <!-- Pestaña de Nosotros -->
+<section id="nosotros" class="pestaña" style="background-image: url('img/fondo\ opaco.jpeg'); background-size: cover; background-position: center; padding: 40px 0;">
+    <h2 class="title" style="text-align: center; font-family: 'Georgia', serif; font-size: 36px; color: #ffffff;">Nosotros</h2>
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+        Bienvenidos a <strong>Frecuencia ST</strong>, la radio oficial del Colegio Santo Tomás. Somos un equipo de estudiantes apasionados por la comunicación y la música, comprometidos con ofrecer una programación variada y de calidad para nuestra comunidad escolar.
     </p>
-    <a href="#" class="btn">Saber más</a>
-</section>
-
-<!-- Sección de Precio -->
-<section id="precio" class="content price">
-    <article class="contain">
-        <h2 class="title">Programación</h2>
-        <p>
-            puedes ver todos los programas grabados para el oido de nuetra audiencia o puedes ver futuros progrmas por salir
-        </p>
-        <button id="novedadesBtn" class="btn">Programas</button>
-    </article>
-</section>
-
-<!-- Modal (cuadro sobrepuesto) -->
-<div id="modalNovedades" class="modal">
-    <div class="modal-content" id="modalContent">
-        <span class="close">&times;</span> <!-- Botón para cerrar el modal -->
-        <h3>PRÓXIMOS PROGRAMAS</h3>
-        <div class="modal-body"> <!-- Contenedor para el cuerpo del modal -->
-            <p>Estos son los próximos programas que saldrán al aire:</p>
-            <ul>
-                <li>VIOLENCIA FAMILIAR - 8 PM</li>
-                <img src="img/skibidi.jpg" alt="Descripción de la imagen" style="max-width: 60%; height: auto; border-radius: 5px;"> <!-- Imagen añadida -->
-                <li>NOCHES DE TERROR - 9 PM</li>
-                <img src="img/skibidi 2.jpg" alt="Descripción de la imagen" style="max-width: 60%; height: auto; border-radius: 5px;"> <!-- Imagen añadida -->
-                <li>LA MUSICA EN LA JUVENTUD - 10 PM</li>
-                <img src="img/skibidi 3.jpg" alt="Descripción de la imagen" style="max-width: 60%; height: auto; border-radius: 5px;"> <!-- Imagen añadida -->
-            </ul>
-
-        </div>
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+        <strong>Frecuencia ST</strong> nace del deseo de crear un espacio inclusivo y dinámico para la comunicación dentro de nuestra comunidad educativa. Fundada por un grupo de entusiastas, nuestra radio se esfuerza por ser una plataforma que conecta a estudiantes, docentes y padres de familia.
+    </p>
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+        Desde el inicio, trabajamos con la misión de ofrecer un medio que informe e inspire, abordando temas relevantes que impactan nuestra vida diaria, desde asuntos sociales y culturales hasta eventos académicos y actividades recreativas.
+    </p>
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+        Nuestro equipo está formado por jóvenes apasionados con diferentes talentos y habilidades, produciendo contenido de calidad. Cada miembro aporta su perspectiva única, lo que nos permite crear una programación diversa y atractiva.
+    </p>
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+        En <strong>Frecuencia ST</strong>, valoramos la participación activa de nuestra audiencia, creemos que cada voz cuenta, y animamos a nuestros oyentes a compartir sus opiniones, ideas y experiencias. Juntos, podemos construir un espacio donde la comunicación fluya libremente y todos se sientan escuchados.
+    </p>
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+        Nos entusiasma el camino que hemos recorrido y el impacto positivo que podemos generar en nuestra comunidad. Te invitamos a sintonizar y ser parte de esta aventura. ¡Bienvenido a <strong>Frecuencia ST</strong>!
+    </p>
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="img/COLEGIO 2.jpeg" alt="Descripción de la imagen" style="max-width: 30%; height: auto; border-radius: 10px;">
     </div>
-</div>
-
-<style>
-    /* Otros estilos existentes... */
-
-    /* Tamaño de letra para el título del modal */
-    .modal-content h3 {
-        font-size: 40px; /* Tamaño del título más grande */
-    }
-
-    /* Tamaño de letra para el texto del cuerpo del modal */
-    .modal-body p {
-        font-size: 44px; /* Texto del cuerpo más grande */
-    }
-
-    /* Tamaño de letra para la lista */
-    .modal-body ul li {
-        font-size: 32px; /* Elementos de la lista más grandes */
-    }
-</style>
-
-
-
-
-
-
-
-<!-- Sección de Contacto -->
-<section id="contacto" class="content contact">
-    <h2 class="title">Contacto</h2>
-    <p>Envíanos la canción que quisieras escuchar al: 77782216</p>
-    <figure class="map">
-        <img src="img/mapa.png" height="220px" width="auto" alt="mapa">
-    </figure>
 </section>
 
-<!-- Script para controlar el modal -->
+
+<!-- Pestaña de Encuesta -->
+<section id="Encuesta" class="pestaña" style="background-color: #1f1d1d; background-size: cover; background-position: center; padding: 40px 0;">
+    <h2 class="title" style="text-align: center; color: white;">Encuesta: ¡Vota por tu Canción o Tema Favorito!</h2>
+    
+    <p style="text-align: center; color: #CCCCCC; font-size: 18px;">
+        Ayúdanos a mejorar nuestra programación. Vota por tu canción favorita o sugiérenos nuevos temas para la radio.
+    </p>
+
+    <!-- Formulario de Encuesta -->
+    <section id="Encuesta" class="pestaña" style="background-image: url('img/fondo\ opaco.jpeg'); background-size: cover; background-position: center; padding: 40px 0;">
+        <h1>Encuesta</h1>
+        <p>Por favor completa nuestra encuesta.</p>
+    </section>
+    
+    
+    <form action="procesar_encuesta.php" method="POST" style="max-width: 600px; margin: 0 auto; color: white;">
+        <label for="nombre" style="display: block; margin-bottom: 10px;">Nombre (Opcional):</label>
+        <input type="text" id="nombre" name="nombre" style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: none;">
+        
+        <label for="opcion-cancion" style="display: block; margin-bottom: 10px;">Elige tu canción favorita:</label>
+        <select id="opcion-cancion" name="cancion" style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: none;">
+            <option value="cancion1">"As It Was" de Harry Styles </option>
+            <option value="cancion2">"Despechada" de Rosalía</option>
+            <option value="cancion3">"Anti-Hero" de Taylor Swift</option>
+            <option value="cancion4">Unholy" de Sam Smith y Kim Petrass</option>
+        </select>
+
+        <label for="sugerencia" style="display: block; margin-bottom: 10px;">Sugerencias para nuevos temas:</label>
+        <textarea id="sugerencia" name="sugerencia" rows="4" style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: none;"></textarea>
+        
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #c531df; color: white; font-size: 16px; border-radius: 5px; border: none;">Enviar Voto</button>
+    </form> 
+
+    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC; text-align: center;">© 2024 Creado por Gabriel Fernando Hidalgo Castro</p>
+    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC; text-align: center;">Ciudad de La Paz, Estado Plurinacional de Bolivia</p>
+    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC; text-align: center;">Radio.Frecuencia.Santo Tomas - @gmail.com - Cel. +591 77782216 (Whatsapp)</p>
+</section>
+
+
+    <!-- Pestaña de Podcast -->
+<section id="precio" class="pestaña" style="background-color: #1f1d1d; background-image: url('img/fondo\ opaco.jpeg'); background-size: auto; background-position: center; background-repeat: repeat; padding: 40px 0;">
+    <article class="contain" style="padding: 40px 0;">
+        <h2 class="title" style="text-align: center; color: white;">Podcast</h2>
+        <p style="color: white; font-size: 26px; margin-top: 20px; text-align: center;">
+            En nuestra sección de podcast, podrás disfrutar de una variedad de programas grabados que abordan temas relevantes para nuestra comunidad educativa.
+        </p>
+        <h2 style="font-size: 36px; color: white; margin-top: 20px; text-align: center;">Temporada 1</h2>
+
+        <!-- Contenedor para las imágenes, reproductores y descripciones -->
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 20px; margin-left: 10%; margin-right: 10%;">
+            <!-- Cada contenedor individual -->
+            <div style="display: flex; flex-direction: column; align-items: center; background-color: rgba(51, 51, 51, 0.4); padding: 20px; border-radius: 10px; margin-bottom: 20px; width: 80%;">
+                <img src="img/VIOLENCIA-FAMILIAR.jpg" alt="Descripción de la imagen 1" style="width: 300px; margin-bottom: 15px;">
+                <h3 style="font-size: 36px; color: white; margin-bottom: 10px; white-space: nowrap;">Violencia Familiar</h3>
+
+                <!-- Reproductor con múltiples fuentes -->
+                <audio id="audio-violencia" controls style="margin-bottom: 10px;">
+                    <source src="audio/VIOLENCIA FAMILIAR 1.mp3" type="audio/mpeg">
+                    <source src="audio/VIOLENCIA FAMILIAR 2.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+
+                <p style="color: #CCCCCC; font-size: 18px; text-align: center;">Explora las causas y consecuencias de la violencia en el ámbito familiar y cómo afecta a nuestra comunidad.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center; background-color: rgba(51, 51, 51, 0.4); padding: 20px; border-radius: 10px; margin-bottom: 20px; width: 80%;">
+                <img src="img/bebida.jpg" alt="Descripción de la imagen 2" style="width: 300px; margin-bottom: 15px;">
+                <h3 style="font-size: 36px; color: white; margin-bottom: 10px; white-space: nowrap;">El Alcoholismo en los Jóvenes</h3>
+
+                <!-- Reproductor con múltiples fuentes -->
+                <audio id="audio-alcoholismo" controls style="margin-bottom: 10px;">
+                    <source src="audio/el alcoholismo en los jovenes 1.mp3" type="audio/mpeg">
+                    <source src="audio/el alcoholismo en los jovenes 2.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+
+                <p style="color: #CCCCCC; font-size: 18px; text-align: center;">Una discusión sobre los peligros del alcoholismo en la juventud y su impacto en la salud y la sociedad.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center; background-color: rgba(51, 51, 51, 0.4); padding: 20px; border-radius: 10px; margin-bottom: 20px; width: 80%;">
+                <img src="img/musica actual.jpg" alt="Descripción de la imagen 3" style="width: 300px; margin-bottom: 15px;">
+                <h3 style="font-size: 36px; color: white; margin-bottom: 10px; white-space: nowrap;">La Música Actual</h3>
+
+                <!-- Reproductor con múltiples fuentes -->
+                <audio id="audio-musica-actual" controls style="margin-bottom: 10px;">
+                    <source src="audio/LA MUSICA ACTUAL 1.mp3" type="audio/mpeg">
+                    <source src="audio/LA MUSICA ACTUAL 2.mp3" type="audio/mpeg">
+                    <source src="audio/LA MUSICA ACTUAL 3.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+
+                <p style="color: #CCCCCC; font-size: 18px; text-align: center;">Un análisis de las tendencias actuales en la música y su influencia en la cultura popular.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center; background-color: rgba(51, 51, 51, 0.4); padding: 20px; border-radius: 10px; margin-bottom: 20px; width: 80%;">
+                <img src="img/miedo.jpg" alt="Descripción de la imagen 4" style="width: 300px; margin-bottom: 15px;">
+                <h3 style="font-size: 36px; color: white; margin-bottom: 10px; white-space: nowrap;">Cosas Paranormales</h3>
+
+                <!-- Reproductor con múltiples fuentes -->
+                <audio id="audio-cosas-paranormales" controls style="margin-bottom: 10px;">
+                    <source src="audio/COSAS PARANORMALES 1.mp3" type="audio/mpeg">
+                    <source src="audio/COSAS PARANORMALES 2.mp3" type="audio/mpeg">
+                    <source src="audio/COSAS PARANORMALES 3.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+
+                <p style="color: #ffffff; font-size: 18px; text-align: center;">Relatos y experiencias sobre lo paranormal, desde historias de fantasmas hasta fenómenos inexplicables.</p>
+            </div>
+        </div>
+    </article>
+</p>
+<p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #ffffff;">© 2024 Creado por Gabriel Fernando Hidalgo Castro</p>
+<p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC;">Ciudad de La Paz, Estado Plurinacional de Bolivia</p>
+<p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC;">Radio.Frecuencia.Santo Tomas - @gmail.com - Cel. +591 77782216 (Whatsapp)</p>
+</header>
+</section>
+
+
 <script>
-    // Obtener elementos del DOM
-    var modal = document.getElementById("modalNovedades");
-    var btn = document.getElementById("novedadesBtn");
-    var span = document.getElementsByClassName("close")[0];
+    document.addEventListener('DOMContentLoaded', function() {
+        // Función para manejar la reproducción automática
+        function setupAutoPlay(audioElement) {
+            audioElement.addEventListener('ended', function() {
+                const sources = audioElement.getElementsByTagName('source');
+                let currentSourceIndex = Array.from(sources).findIndex(source => source.src === audioElement.currentSrc);
 
-    // Cuando se hace clic en el botón, mostrar el modal y deshabilitar el desplazamiento
-    btn.onclick = function() {
-        modal.style.display = "block";
-        document.body.classList.add('modal-open'); // Agrega la clase para evitar desplazamiento
-    }
-
-    // Cuando se hace clic en la "x", cerrar el modal y habilitar el desplazamiento
-    span.onclick = function() {
-        modal.style.display = "none";
-        document.body.classList.remove('modal-open'); // Remueve la clase para habilitar desplazamiento
-    }
-
-    // Cuando se hace clic fuera del modal, cerrarlo y habilitar el desplazamiento
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            document.body.classList.remove('modal-open'); // Remueve la clase para habilitar desplazamiento
+                // Si hay más canciones, cambia a la siguiente
+                if (currentSourceIndex < sources.length - 1) {
+                    currentSourceIndex++;
+                    audioElement.src = sources[currentSourceIndex].src;
+                    audioElement.play();
+                }
+            });
         }
-    }
+
+        // Configurar la reproducción automática para cada reproductor
+        setupAutoPlay(document.getElementById('audio-violencia'));
+        setupAutoPlay(document.getElementById('audio-alcoholismo'));
+        setupAutoPlay(document.getElementById('audio-musica-actual'));
+        setupAutoPlay(document.getElementById('audio-cosas-paranormales'));
+    });
 </script>
+
+
+
+
+<!-- Script para alternar entre vistas -->
+<script>
+    var navLinks = document.querySelectorAll('.nav-link');
+    var pestanas = document.querySelectorAll('.pestaña');
+    var inicioSection = document.getElementById('inicio');
+
+    // Mostrar la sección de Inicio al cargar
+    window.onload = function() {
+        inicioSection.style.display = 'block'; // Mostrar sección de inicio
+    };
+
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+
+            // Ocultar todas las pestañas
+            pestanas.forEach(function(pestana) {
+                pestana.style.display = 'none';
+            });
+
+            // Mostrar la sección de Inicio si el botón de Inicio es clicado
+            if (link.id === 'inicioBtn') {
+                inicioSection.style.display = 'block'; // Mostrar sección de inicio
+            } else {
+                inicioSection.style.display = 'none'; // Ocultar sección de inicio
+                // Mostrar la pestaña correspondiente
+                var sectionToShow = document.getElementById(link.dataset.section);
+                if (sectionToShow) {
+                    sectionToShow.style.display = 'block'; // Mostrar pestaña seleccionada
+                }
+            }
+        });
+    });
+</script>
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+    
