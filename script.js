@@ -32,3 +32,21 @@ window.addEventListener('wheel', function(event) {
         event.preventDefault(); // Evitar el desplazamiento
     }
 }, { passive: false });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pestañas = document.querySelectorAll('.pestaña');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const section = this.getAttribute('data-section');
+
+            pestañas.forEach(pestaña => {
+                pestaña.style.display = 'none'; // Oculta todas las pestañas
+            });
+
+            document.getElementById(section).style.display = 'block'; // Muestra la pestaña seleccionada
+        });
+    });
+});
