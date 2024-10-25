@@ -206,8 +206,15 @@
         <img src="img/COLEGIO 2.jpeg" alt="Descripción de la imagen" style="max-width: 30%; height: auto; border-radius: 10px;">
     </div>
 </section>
-    
-<!-- Formulario de Encuesta -->
+
+<!-- Pestaña de Encuesta -->
+<section id="Encuesta" class="pestaña" style="background-image: url('img/fondo\ opaco.jpeg'); background-size: cover; background-position: center; padding: 40px 0;">
+    <h2 class="title" style="text-align: center; color: white;">Encuesta: ¡Vota por tu Canción o Tema Favorito!</h2>
+    <p style="text-align: center; color: #CCCCCC; font-size: 18px;">
+        Ayúdanos a mejorar nuestra programación. Vota por tu canción favorita o sugiérenos nuevos temas para la radio.
+    </p>
+
+    <!-- Formulario de Encuesta -->
     <form id="formEncuesta" onsubmit="enviarPorWhatsApp(event)" style="max-width: 600px; margin: 0 auto; color: white;">
         <label for="nombre" style="display: block; margin-bottom: 10px;">Nombre (Opcional):</label>
         <input type="text" id="nombre" name="nombre" style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: none;">
@@ -251,7 +258,6 @@ function enviarPorWhatsApp(event) {
     window.open(urlWhatsApp, '_blank');
 }
 </script>
-
 
 
     <!-- Pestaña de Podcast -->
@@ -399,11 +405,6 @@ function enviarPorWhatsApp(event) {
 
 </body>
 </html>
-
-
-
-
-
 
 
 
