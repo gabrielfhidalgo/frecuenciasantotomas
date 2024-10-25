@@ -215,7 +215,14 @@
     </p>
 
     <!-- Formulario de Encuesta -->
-    <form id="formEncuesta" onsubmit="mostrarMensaje(event)" style="max-width: 600px; margin: 0 auto; color: white;">
+<section id="Encuesta" class="pestaña" style="background-image: url('img/fondo\ opaco.jpeg'); background-size: cover; background-position: center; padding: 40px 0;">
+    <h2 class="title" style="text-align: center; color: white;">Encuesta: ¡Vota por tu Canción o Tema Favorito!</h2>
+    <p style="text-align: center; color: #CCCCCC; font-size: 18px;">
+        Ayúdanos a mejorar nuestra programación. Vota por tu canción favorita o sugiérenos nuevos temas para la radio.
+    </p>
+
+    <!-- Formulario de Encuesta -->
+    <form id="formEncuesta" onsubmit="enviarPorWhatsApp(event)" style="max-width: 600px; margin: 0 auto; color: white;">
         <label for="nombre" style="display: block; margin-bottom: 10px;">Nombre (Opcional):</label>
         <input type="text" id="nombre" name="nombre" style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: none;">
         
@@ -231,17 +238,29 @@
         <textarea id="sugerencia" name="sugerencia" rows="4" style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: none;"></textarea>
         
         <button type="submit" style="width: 100%; padding: 10px; background-color: #c531df; color: white; font-size: 16px; border-radius: 5px; border: none;">Enviar Voto</button>
-    </form> 
+    </form>
+</section>
 
-    <!-- Mensaje de confirmación solo para la pestaña de Encuesta -->
-    <p id="mensajeConfirmacion" style="display: none; text-align: center; color: #00FF00; font-size: 18px; margin-top: 20px;">¡Gracias! Tu voto ha sido enviado.</p>
-</section>
-</p>
-<p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC;">© 2024 Creado por Gabriel Fernando Hidalgo Castro</p>
-<p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC;">Ciudad de La Paz, Estado Plurinacional de Bolivia</p>
-<p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #CCCCCC;">Radio.Frecuencia.Santo Tomas - @gmail.com - Cel. +591 77782216 (Whatsapp)</p>
-</header>
-</section>
+<script>
+function enviarPorWhatsApp(event) {
+    event.preventDefault(); // Evita que el formulario se envíe por la vía tradicional
+
+    // Recopila los datos del formulario
+    const nombre = document.getElementById("nombre").value || "No especificado";
+    const cancion = document.getElementById("opcion-cancion").value;
+    const sugerencia = document.getElementById("sugerencia").value || "No especificada";
+    
+    // Formato del mensaje
+    const mensaje = `Hola, soy ${nombre}. Mi canción favorita es "${cancion}" y sugiero: ${sugerencia}.`;
+    
+    // URL de WhatsApp con el mensaje y el número
+    const numeroTelefono = "59177782216"; // Cambia a tu número en formato internacional sin el '+'
+    const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+    
+    // Abrir el enlace de WhatsApp en una nueva pestaña
+    window.open(urlWhatsApp, '_blank');
+}
+</script>
 
 
 
