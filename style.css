@@ -296,3 +296,12 @@ p {
     padding: 10px; /* Espaciado interno */
 }
 
+.contact p {
+    margin:5px 0; /* Margen vertical para separar los párrafos */
+}
+
+.head .logo img {
+    height: 50px; /* Ajusta la altura de la imagen */
+    width: auto;  /* Mantiene la proporción del ancho */
+}
+ 
