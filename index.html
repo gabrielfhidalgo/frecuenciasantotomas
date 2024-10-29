@@ -9,6 +9,22 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Frecuencia ST</title>
     <style>
+    /* Contenedor de la barra de navegación */
+    .navbar {
+        display: flex;
+        justify-content: center; /* Centra los botones inicialmente */
+        margin-right: 210px; /* Ajusta este valor para mover los botones hacia la derecha */
+        /* Usa margin-right en lugar de margin-left para moverlos hacia la izquierda */
+    }
+
+    .nav-link {
+        margin: 0 15px; /* Espacio entre los enlaces */
+        font-family: 'Arial', sans-serif;
+        color: white;
+        text-decoration: none;
+    }
+
+
         /* Estilos básicos */
         body {
             background-color: #1f1d1d; /* Color de fondo de la página */
@@ -89,14 +105,14 @@
 <div class="head">
     <div class="logo">
         <a href="#" id="logoBtn">
-            <img src="img/LOGO.jpg" style="height: 50px; width: auto;"> <!-- Cambia la ruta de la imagen según sea necesario -->
+            <img src="img/LOGO.jpg" style="height: 50px; width: auto; margin-left: 400px;"> <!-- Cambia la ruta de la imagen según sea necesario -->
         </a>
     </div>
     <nav class="navbar">
         <a href="#" id="inicioBtn" class="nav-link" data-section="inicio">inicio</a>
         <a href="#" class="nav-link" data-section="nosotros">nosotros</a>
         <a href="#" class="nav-link" data-section="Encuesta">Votacion</a>
-        <a href="#" class="nav-link" data-section="productos">encuentranos</a>
+        <a href="#" class="nav-link" data-section="productos">Contactos</a>
         <a href="#" class="nav-link" data-section="precio">Podcast</a>
     </nav>
 </div>
@@ -126,10 +142,11 @@
     <!-- Sección de Inicio -->
      
 <header id="inicio" class="content header">
-    <h2 class="title" style="padding-top: 50px; color: white;">RADIO AUDIOCAST EN LA UNIDAD EDUCATIVA SANTO TOMAS</h2>
-    <p style="color: white; font-size: 20px;">
-        FRECUENCIA, CONECTANDO VOCES Y RITMOS DE LA UNIDAD EDUCATIVA SANTO TOMAS
+    <h2 class="title" style="padding-top: 50px; color: white;"> FRECUENCIA EDUCATIVA SANTO TOMAS</h2>
+    <p style="color: white; font-size: 16px;"> <!-- Cambia el tamaño de fuente según sea necesario -->
+         CONECTANDO VOCES Y RITMOS DE LA UNIDAD EDUCATIVA SANTO TOMÁS
     </p>
+    
     <p style="color: #c531df; font-size: 26px; font-weight: bold; text-transform: uppercase; margin-top: 20px;">
         ¡Descarga nuestras aplicaciones y lleva la radio a donde vayas!
     </p>
@@ -154,7 +171,7 @@
 <section id="productos" class="pestaña" style="background-color: #1f1d1d; background-image: url('img/fondo opaco.jpeg'); background-size: auto; background-position: center; background-repeat: repeat; padding: 40px 0;">
     <h2 class="title">NUESTRA RADIO</h2>
     <p>
-        Nuestra radio se propone ser un espacio de comunicación inclusivo y accesible, donde los usuarios puedan conectarse entre sí y compartir información valiosa. A través de una variedad de programas y emisiones, buscaremos fomentar un ambiente en el que se aborden temas de interés general, promoviendo el diálogo y el intercambio de ideas 
+        Contáctanos para mantenerte al tanto de nuestras novedades y ser parte de una comunidad inclusiva y accesible. A través de diversos programas y emisiones, buscamos crear un espacio donde el diálogo y el intercambio de ideas sean el centro. ¡Únete y comparte con nosotros!
     </p>
     <div class="box-container">
         <div class="box">
@@ -167,39 +184,42 @@
             <h3>TikTok</h3>
             <p>FRECUENCIA ST_LIVE</p>
         </div>
-        <div class="box">
-            <i class="fab fa-android"></i>
-            <h3>APP iOS y Android </h3>
-            <p><a href="https://www.appcreator24.com/app3341072-6ha1y2" target="_blank" style="color: #ffffff; text-decoration: none;">FRECUENCIA ST</a></p>
+        <div class="box" style="text-align: center;">
+            <a href="https://www.appcreator24.com/app3341072-6ha1y2" target="_blank">
+                <img src="img/descargar.jpeg" alt="FRECUENCIA ST" style="max-width: 100%; height: auto; border-radius: 10   px;">
+            </a>
+            <p>DESCARGAR NUESTRA APK PARA ANDROID</p>
+            
         </div>
+        
     </div>
-    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #ffffff;">© 2024 Creado por Gabriel Fernando Hidalgo Castro</p>
-    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #ffffff;">Ciudad de La Paz, Estado Plurinacional de Bolivia</p>
-    <p style="margin-top: 10px; font-family: 'Arial', sans-serif; color: #ffffff;">Radio.Frecuencia.Santo Tomas - @gmail.com - Cel. +591 77782216 (Whatsapp)</p>
-</section>
+    <p style="margin-top: 5px; font-family: 'Arial', sans-serif; color: #ffffff;">© 2024 Creado por Gabriel Fernando Hidalgo Castro</p>
+    <p style="margin-top: 5px; font-family: 'Arial', sans-serif; color: #ffffff;">Ciudad de La Paz, Estado Plurinacional de Bolivia</p>
+    <p style="margin-top: 5px; font-family: 'Arial', sans-serif; color: #ffffff;">Radio.Frecuencia.Santo Tomas - @gmail.com - Cel. +591 77782216 (Whatsapp)</p>
+    </section>
+    
 
 
 
-
-    <!-- Pestaña de Nosotros -->
+   <!-- Pestaña de Nosotros -->
 <section id="nosotros" class="pestaña" style="background-image: url('img/fondo\ opaco.jpeg'); background-size: cover; background-position: center; padding: 40px 0;">
-    <h2 class="title" style="text-align: center; font-family: 'Georgia', serif; font-size: 36px; color: #ffffff;">Nosotros</h2>
-    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+    <h2 class="title" style="text-align: center; font-family: 'Arial', sans-serif; font-style: italic; font-size: 36px; color: #ffffff;">Nosotros</h2>
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Arial', sans-serif; font-style: italic; color: #f0f0f0;">
         Bienvenidos a <strong>Frecuencia ST</strong>, la radio oficial del Colegio Santo Tomás. Somos un equipo de estudiantes apasionados por la comunicación y la música, comprometidos con ofrecer una programación variada y de calidad para nuestra comunidad escolar.
     </p>
-    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Arial', sans-serif; font-style: italic; color: #f0f0f0;">
         <strong>Frecuencia ST</strong> nace del deseo de crear un espacio inclusivo y dinámico para la comunicación dentro de nuestra comunidad educativa. Fundada por un grupo de entusiastas, nuestra radio se esfuerza por ser una plataforma que conecta a estudiantes, docentes y padres de familia.
     </p>
-    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Arial', sans-serif; font-style: italic; color: #f0f0f0;">
         Desde el inicio, trabajamos con la misión de ofrecer un medio que informe e inspire, abordando temas relevantes que impactan nuestra vida diaria, desde asuntos sociales y culturales hasta eventos académicos y actividades recreativas.
     </p>
-    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Arial', sans-serif; font-style: italic; color: #f0f0f0;">
         Nuestro equipo está formado por jóvenes apasionados con diferentes talentos y habilidades, produciendo contenido de calidad. Cada miembro aporta su perspectiva única, lo que nos permite crear una programación diversa y atractiva.
     </p>
-    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Arial', sans-serif; font-style: italic; color: #f0f0f0;">
         En <strong>Frecuencia ST</strong>, valoramos la participación activa de nuestra audiencia, creemos que cada voz cuenta, y animamos a nuestros oyentes a compartir sus opiniones, ideas y experiencias. Juntos, podemos construir un espacio donde la comunicación fluya libremente y todos se sientan escuchados.
     </p>
-    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Georgia', serif; color: #f0f0f0;">
+    <p style="text-indent: 10px; text-align: justify; font-size: 18px; line-height: 1.8; font-family: 'Arial', sans-serif; font-style: italic; color: #f0f0f0;">
         Nos entusiasma el camino que hemos recorrido y el impacto positivo que podemos generar en nuestra comunidad. Te invitamos a sintonizar y ser parte de esta aventura. ¡Bienvenido a <strong>Frecuencia ST</strong>!
     </p>
     <div style="text-align: center; margin-top: 20px;">
@@ -405,6 +425,11 @@ function enviarPorWhatsApp(event) {
 
 </body>
 </html>
+
+
+
+
+
 
 
 
